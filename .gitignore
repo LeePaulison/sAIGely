@@ -43,6 +43,9 @@ client/*.tsbuildinfo
 client/next-env.d.ts
 client/.vercel
 
+# Documentation
+!docs/
+
 # Server
 server/node_modules/
 server/dist/
