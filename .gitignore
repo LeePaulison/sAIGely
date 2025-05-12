@@ -1,38 +1,17 @@
-# Dependencies
-/node_modules
-/.pnp
-.pnp.js
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-yarn.lock
-
-# Testing
-/coverage
-
-# Production build files
-/build
-/dist
-
-# TypeScript build artifacts
-*.tsbuildinfo
-*.js.map
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Root - ignore everything in root except specific folders and files
+/*
+!.gitignore
+!README.md
+!client/
+!server/
 
 # IDE and editors
-/.idea
-/.vscode/*
-!/.vscode/extensions.json
-!/.vscode/settings.json
-!/.vscode/tasks.json
-!/.vscode/launch.json
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
 .project
 .classpath
 *.sublime-workspace
@@ -49,23 +28,47 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 
-# Logs
-logs
-*.log
+# Client (Next.js)
+client/.next/
+client/out/
+client/build
+client/node_modules/
+client/.env*.local
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/.pnpm-debug.log*
+client/coverage/
+client/*.tsbuildinfo
+client/next-env.d.ts
+client/.vercel
 
-# Cache
-.npm
-.eslintcache
-.stylelintcache
+# Server
+server/node_modules/
+server/dist/
+server/build/
+server/coverage/
+server/.env
+server/.env.*
+server/npm-debug.log*
+server/yarn-debug.log*
+server/yarn-error.log*
+server/logs/
+server/*.log
+server/*.tsbuildinfo
 
-# Compiled binary addons
-/build/Release
-
-# Debug directory
-.debug
-
-# Misc
-.temp
-.tmp
-.cache
-
+# Common in both client and server
+**/.env
+**/.env.local
+**/.env.*.local
+**/node_modules
+**/.cache
+**/.temp
+**/.tmp
+**/coverage
+**/build
+**/dist
+**/*.log
+**/*.tsbuildinfo
+**/package-lock.json
+**/yarn.lock
