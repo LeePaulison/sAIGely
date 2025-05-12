@@ -1,0 +1,71 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Testing
+/coverage
+
+# Production build files
+/build
+/dist
+
+# TypeScript build artifacts
+*.tsbuildinfo
+*.js.map
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editors
+/.idea
+/.vscode/*
+!/.vscode/extensions.json
+!/.vscode/settings.json
+!/.vscode/tasks.json
+!/.vscode/launch.json
+.project
+.classpath
+*.sublime-workspace
+*.sublime-project
+.vs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+logs
+*.log
+
+# Cache
+.npm
+.eslintcache
+.stylelintcache
+
+# Compiled binary addons
+/build/Release
+
+# Debug directory
+.debug
+
+# Misc
+.temp
+.tmp
+.cache
+
