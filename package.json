@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ws": "node -r @swc-node/register lib/websocket/websocketServer.ts"
   },
   "dependencies": {
     "@apollo/server": "^4.12.0",
@@ -20,16 +21,20 @@
     "next-auth": "^4.24.11",
     "pg": "^8.16.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "ws": "^8.18.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@swc-node/register": "^1.10.10",
+    "@swc/core": "^1.11.24",
     "@tailwindcss/postcss": "^4",
     "@types/graphql": "^14.2.3",
     "@types/node": "^20",
     "@types/pg-pool": "^2.0.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/ws": "^8.18.1",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4",
