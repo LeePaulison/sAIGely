@@ -15,6 +15,9 @@ declare module 'next-auth' {
 }
 
 export const authOptions: NextAuthOptions = {
+  session: {
+    strategy: 'jwt',
+  },
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID || '',
