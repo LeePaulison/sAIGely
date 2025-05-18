@@ -21,10 +21,12 @@ export const typeDefs = gql`
 
   type Query {
     user(github_id: String!): User
+    me: User
     preferences(id: ID!): Preferences
   }
 
   type Mutation {
     createUser(github_id: String!, name: String, email: String, image: String): User
+    updatePreferences(id: ID!, theme: String, ai_settings: JSON, data_retention: String): Preferences
   }
 `;

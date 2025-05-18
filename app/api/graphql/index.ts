@@ -1,6 +1,7 @@
 import { GraphQLJSON } from 'graphql-type-json';
 import * as userDAL from '@/lib/dal/users';
 import * as prefDAL from '@/lib/dal/preferences';
+import { GraphQLContext } from '@/app/api/graphql/route';
 
 export const resolvers = {
   JSON: GraphQLJSON,
@@ -11,6 +12,22 @@ export const resolvers = {
       if (!user) return null;
       const preferences = user.preferences_id ? await prefDAL.getPreferencesById(user.preferences_id) : null;
       return { ...user, preferences };
+    },
+    me: async (_: unknown, __: unknown, context: GraphQLContext) => {
+      const userId = context.session?.user?.id;
+      if (!userId) {
+        return null;
+      }
+      const user = await userDAL.getUserByGithubId(userId);
+
+      if (!user) return null;
+
+      const preferences = user.preferences_id ? await prefDAL.getPreferencesById(user.preferences_id) : null;
+
+      return {
+        ...user,
+        preferences,
+      };
     },
     preferences: (_: unknown, { id }: { id: number }) => {
       return prefDAL.getPreferencesById(id);
@@ -43,6 +60,27 @@ export const resolvers = {
       const user = await userDAL.getUserByGithubId(github_id);
       const preferences = await prefDAL.getPreferencesById(preferencesId);
       return { ...user, preferences };
+    },
+    updatePreferences: async (
+      _: unknown,
+      {
+        id,
+        theme,
+        ai_settings,
+        data_retention,
+      }: {
+        id: number;
+        theme?: string;
+        ai_settings?: string;
+        data_retention?: string;
+      }
+    ) => {
+      const preferences = await prefDAL.updatePreferences(id, {
+        theme,
+        ai_settings,
+        data_retention,
+      });
+      return preferences;
     },
   },
 };

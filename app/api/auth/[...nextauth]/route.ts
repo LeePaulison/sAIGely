@@ -1,5 +1,7 @@
-import NextAuth from 'next-auth';
+import NextAuth, { NextAuthOptions } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
+import * as userDAL from '@/lib/dal/users';
+import * as prefDAL from '@/lib/dal/preferences';
 
 declare module 'next-auth' {
   interface Session {
@@ -12,7 +14,7 @@ declare module 'next-auth' {
   }
 }
 
-const handler = NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID || '',
@@ -25,8 +27,22 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async signIn({ user, account, profile }) {
-      // optional place to add domain filters or block accounts
+    async signIn({ user }) {
+      if (!user || !user.id) return false;
+
+      // Does the user already exist?
+      const existing = await userDAL.getUserByGithubId(user.id.toString());
+
+      if (!existing) {
+        const preferencesId = await prefDAL.createDefaultPreferences();
+        await userDAL.createUser({
+          githubId: user.id.toString(),
+          name: user.name,
+          email: user.email,
+          image: user.image,
+          preferencesId,
+        });
+      }
       return true;
     },
     async jwt({ token, user }) {
@@ -50,6 +66,8 @@ const handler = NextAuth({
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
