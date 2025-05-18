@@ -2,6 +2,7 @@ import { GraphQLJSON } from 'graphql-type-json';
 import * as userDAL from '@/lib/dal/users';
 import * as prefDAL from '@/lib/dal/preferences';
 import { GraphQLContext } from '@/app/api/graphql/route';
+import { createUserWithDefaults } from '@/lib/services/userServices';
 
 export const resolvers = {
   JSON: GraphQLJSON,
@@ -49,17 +50,12 @@ export const resolvers = {
         image?: string;
       }
     ) => {
-      const preferencesId = await prefDAL.createDefaultPreferences();
-      await userDAL.createUser({
+      return await createUserWithDefaults({
         githubId: github_id,
         name,
         email,
         image,
-        preferencesId,
       });
-      const user = await userDAL.getUserByGithubId(github_id);
-      const preferences = await prefDAL.getPreferencesById(preferencesId);
-      return { ...user, preferences };
     },
     updatePreferences: async (
       _: unknown,
