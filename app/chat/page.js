@@ -3,6 +3,8 @@
 'use client';
 
 import { useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { useChatSocket } from '@/lib/wsClient';
 import ChatWindow from './ChatWindow';
 
 const mockMessages = [
@@ -13,23 +15,16 @@ const mockMessages = [
 ];
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState(mockMessages);
-  const [isStreaming, setIsStreaming] = useState(false);
+  const { data: session } = useSession();
+  const userId = session?.user?.id;
 
-  const handleSend = (newMessage) => {
-    setMessages((prev) => [
-      ...prev,
-      { role: 'user', content: newMessage },
-      {
-        role: 'assistant',
-        content: `Mock response to: "${newMessage}"`,
-      },
-    ]);
-  };
+  console.log('User ID:', userId);
+
+  const { messages, sendMessage, isConnected, isStreaming } = useChatSocket(userId);
 
   return (
-    <div className='h-screen bg-gray-50'>
-      <ChatWindow messages={messages} onSend={handleSend} isStreaming={isStreaming} />
-    </div>
+    <>
+      <ChatWindow messages={messages} onSend={sendMessage} isStreaming={isStreaming} isConnected={isConnected} />
+    </>
   );
 }

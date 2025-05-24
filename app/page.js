@@ -1,6 +1,5 @@
-'use client';
-// This is a client component
-
+import { redirect } from 'next/navigation';
 export default function Home() {
-  return <>Your chat interface will appear here.</>;
+  redirect('/chat');
+  return null;
 }
