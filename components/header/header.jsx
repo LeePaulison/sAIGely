@@ -1,7 +1,13 @@
-import React from 'react';
+'use client';
+// This is a client component
+import { useState } from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import SignInModal from '../signInModal/signInModal';
 import { Button, Heading } from '@radix-ui/themes';
 
 export default function Header() {
+  const { data: session } = useSession();
+
   return (
     <header className="w-full px-4 py-3 border-b bg-white">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -22,9 +28,11 @@ export default function Header() {
           {/* <a href="/docs" className="text-sm text-gray-600 hover:text-gray-800">Docs</a> */}
 
           {/* Auth button */}
-          <Button variant="solid" highContrast>
-            Sign In
-          </Button>
+          {session?.user ? (
+            <button onClick={() => signOut()} className="text-sm text-blue-600">Sign out</button>
+          ) : (
+            <button onClick={() => signIn('github')} className="text-sm text-blue-600">Sign in</button>
+          )}
         </div>
       </div>
     </header>

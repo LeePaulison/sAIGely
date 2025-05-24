@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'Project-Sage',
+  title: {
+    default: 'Project-Sage',
+    template: '%s | Project-Sage',
+  },
   description: 'A developer-focused GenAI MVP by Lee Paulison Jr',
   keywords: 'GenAI, MVP, developer-focused, Lee Paulison Jr',
   authors: [{ name: 'Lee Paulison Jr', url: 'https://github.com/LeePaulison/project-sage' }],
@@ -48,6 +51,13 @@ export const metadata = {
   alternates: {
     canonical: 'https://github.com/LeePaulison/project-sage',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: true,
 };
 
 export default function RootLayout({ children }) {
