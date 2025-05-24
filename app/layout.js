@@ -1,6 +1,10 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import Head from 'next/head';
+// Providers
+import Providers from '@/providers/providers';
+// Components
+import Header from '@/components/header/Header';
+import Footer from '@/components/footer/Footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -22,15 +26,13 @@ export const metadata = {
   authors: [{ name: 'Lee Paulison Jr', url: 'https://github.com/LeePaulison/project-sage' }],
   creator: 'Lee Paulison Jr',
   publisher: 'Lee Paulison Jr',
-  viewport: 'width=device-width, initial-scale=1.0',
-  colorScheme: 'light',
-  themeColor: '#1f2937',
   robots: { index: true, follow: true },
   icons: {
     icon: '/assets/icons/favicon.ico',
     shortcut: '/assets/icons/favicon.ico',
     apple: '/assets/icons/apple-touch-icon.png',
   },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'Project-Sage',
     description: 'A developer-focused GenAI MVP by Lee Paulison Jr',
@@ -58,15 +60,22 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: true,
+  colorScheme: 'light',
+  themeColor: '#1f2937',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <Head>
-        <link rel='manifest' href='/site.webmanifest' />
-      </Head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Providers>
+          <div className='grid grid-rows-[auto_1fr_auto] items-center justify-items-center w-svw h-svh border-red-700'>
+            <Header />
+            <main className='flex items-center justify-center h-full w-full text-gray-400 italic'>{children}</main>
+            <Footer />
+          </div>
+        </Providers>
+      </body>
     </html>
   );
 }
