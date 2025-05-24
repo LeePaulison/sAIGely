@@ -14,7 +14,6 @@ Designed as a portfolio piece, Sage demonstrates technical fluency across multip
 - **React** with **Tailwind CSS**
 - **Radix UI** for accessible, headless component primitives
 - **Client-side GraphQL** via Apollo Client
-- **Custom Global Modal system**
 
 Fully responsive and mobile-optimized with a consistent layout system across breakpoints.
 
@@ -33,15 +32,15 @@ A layered back-end system focused on modularity, testability, and maintainabilit
 ### 🧱 Backend Architecture Layers
 
 - **Data Layer**
-    - Handles raw interaction with PostgreSQL and MongoDB
-    - Abstracted query/mutation logic for easy testing and replacement
+  - Handles raw interaction with PostgreSQL and MongoDB
+  - Abstracted query/mutation logic for easy testing and replacement
 - **Business Logic Layer**
-    - Orchestrates logic across services (e.g., chat state, user roles)
-    - Central place for implementing rules and side effects
+  - Orchestrates logic across services (e.g., chat state, user roles)
+  - Central place for implementing rules and side effects
 - **Interface Layer**
-    - GraphQL schema, resolvers, and subscription handlers
-    - WebSocket connection manager
-    - Validation and formatting of data for the client
+  - GraphQL schema, resolvers, and subscription handlers
+  - WebSocket connection manager
+  - Validation and formatting of data for the client
 
 ---
 
@@ -52,9 +51,9 @@ A layered back-end system focused on modularity, testability, and maintainabilit
 - Session persistence & resumption
 - Preference system (e.g., model selection, verbosity, etc.)
 - Server abstraction layers:
-    - Data Layer → PostgreSQL/Mongo
-    - Business Logic Layer → session + role management
-    - AI Interface Layer → OpenAI API integration
+  - Data Layer → PostgreSQL/Mongo
+  - Business Logic Layer → session + role management
+  - AI Interface Layer → OpenAI API integration
 - Responsive, accessible UI design using Radix UI + Tailwind
 - MVP-ready, scalable structure for extension
 
@@ -114,7 +113,7 @@ No GUI interaction is required during back-end validation.
 
 ## 📸 Screenshots & Demo
 
-*(Coming soon with video walkthrough)*
+_(Coming soon with video walkthrough)_
 
 ---
 
