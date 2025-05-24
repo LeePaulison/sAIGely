@@ -14,12 +14,40 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: 'Project-Sage',
-  icons: {
-    icon: 'assets/icons/favicon.ico',
-    shortcut: 'assets/icons/favicon.ico',
-    apple: 'assets/icons/apple-touch-icon.png',
-  },
   description: 'A developer-focused GenAI MVP by Lee Paulison Jr',
+  keywords: 'GenAI, MVP, developer-focused, Lee Paulison Jr',
+  authors: [{ name: 'Lee Paulison Jr', url: 'https://github.com/LeePaulison/project-sage' }],
+  creator: 'Lee Paulison Jr',
+  publisher: 'Lee Paulison Jr',
+  viewport: 'width=device-width, initial-scale=1.0',
+  colorScheme: 'light',
+  themeColor: '#1f2937',
+  robots: { index: true, follow: true },
+  icons: {
+    icon: '/assets/icons/favicon.ico',
+    shortcut: '/assets/icons/favicon.ico',
+    apple: '/assets/icons/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'Project-Sage',
+    description: 'A developer-focused GenAI MVP by Lee Paulison Jr',
+    url: 'https://github.com/LeePaulison/project-sage',
+    siteName: 'Project-Sage',
+    images: [
+      {
+        url: 'https://github.com/LeePaulison/project-sage/raw/main/assets/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Project-Sage',
+        type: 'image/png',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://github.com/LeePaulison/project-sage',
+  },
 };
 
 export default function RootLayout({ children }) {
