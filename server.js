@@ -1,5 +1,5 @@
 // server.js
 import dotenv from 'dotenv';
-dotenv.config(); // If using .env.local
+dotenv.config({ path: '.env.local' });
 
-import './lib/wsServer.js'; // ✅ This pulls in your WebSocket logic
+import './lib/wsServer.js';
