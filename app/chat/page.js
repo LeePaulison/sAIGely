@@ -6,25 +6,43 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useChatSocket } from '@/lib/wsClient';
 import ChatWindow from './ChatWindow';
-
-const mockMessages = [
-  { role: 'user', content: 'Hello, who are you?' },
-  { role: 'assistant', content: 'I’m an AI assistant built using OpenAI!' },
-  { role: 'user', content: 'Cool. What can you do?' },
-  { role: 'assistant', content: 'I can help you code, write, and reason through problems.' },
-];
+import SignInModal from '@/components/signInModal/signInModal';
 
 export default function ChatPage() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const userId = session?.user?.id;
+  const isAuthenticated = status === 'authenticated';
 
-  console.log('User ID:', userId);
+  console.log('[Chat/page.js] User ID:', userId);
 
   const { messages, sendMessage, isConnected, isStreaming } = useChatSocket(userId);
 
+  const [isSignInModalOpen, setSignInModalOpen] = useState(false);
+
+  const requireAuth = (unsentMessage) => {
+    if (!isAuthenticated) {
+      localStorage.setItem('unsentMessage', unsentMessage);
+      setSignInModalOpen(true);
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSignInModalClose = () => {
+    setSignInModalOpen(false);
+  };
+
   return (
     <>
-      <ChatWindow messages={messages} onSend={sendMessage} isStreaming={isStreaming} isConnected={isConnected} />
+      <ChatWindow
+        messages={messages}
+        onSend={sendMessage}
+        isStreaming={isStreaming}
+        isConnected={isConnected}
+        requireAuth={requireAuth}
+      />
+      <SignInModal open={isSignInModalOpen} onOpenChange={handleSignInModalClose} />
     </>
   );
 }

@@ -1,16 +1,27 @@
 // app/chat/MessageInput.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@radix-ui/themes';
 
-export default function MessageInput({ onSend, isStreaming }) {
+export default function MessageInput({ onSend, isStreaming, requireAuth }) {
   const [input, setInput] = useState('');
 
   const handleSend = () => {
-    if (!input.trim()) return;
-    console.log('Sending message:', input);
-    onSend(input.trim());
+    const trimmed = input.trim();
+    if (!trimmed) return;
+
+    if (!requireAuth(trimmed)) return;
+
+    onSend(trimmed);
     setInput('');
   };
+
+  useEffect(() => {
+    const unsentMessage = localStorage.getItem('unsentMessage');
+    if (unsentMessage) {
+      setInput(unsentMessage);
+      localStorage.removeItem('unsentMessage');
+    }
+  }, []);
 
   return (
     <div className="p-4 border-t flex items-end gap-2 bg-white">
