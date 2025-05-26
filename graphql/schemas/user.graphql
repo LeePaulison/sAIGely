@@ -1,0 +1,17 @@
+type User {
+  id: ID!
+  sub: String!
+  name: String
+  email: String
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  me: User
+  hello: String!
+}
+
+type Mutation {
+  createUserIfNotExists(sub: String!, name: String, email: String): User!
+}

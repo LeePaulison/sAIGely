@@ -1,0 +1,26 @@
+type Preferences {
+  id: ID!
+  userId: ID!
+  model: String!
+  temperature: Float!
+  systemPrompt: String
+  maxTokens: Int
+  compactMode: Boolean!
+  updatedAt: String!
+}
+
+type Query {
+  myPreferences: Preferences
+}
+
+input UpdatePreferencesInput {
+  model: String
+  temperature: Float
+  systemPrompt: String
+  maxTokens: Int
+  compactMode: Boolean
+}
+
+type Mutation {
+  updatePreferences(input: UpdatePreferencesInput!): Preferences!
+}

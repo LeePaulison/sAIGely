@@ -1,0 +1,17 @@
+type TemperaturePreset {
+  value: Float!
+  label: String!
+  description: String!
+}
+
+type ModelPreset {
+  model: String!
+  label: String!
+  description: String!
+  isAvailable: Boolean!
+}
+
+type Query {
+  temperaturePresets: [TemperaturePreset!]!
+  modelPresets: [ModelPreset!]!
+}
