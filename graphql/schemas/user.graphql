@@ -3,8 +3,8 @@ type User {
   sub: String!
   name: String
   email: String
-  createdAt: String!
-  updatedAt: String!
+  created_at: String!
+  updated_at: String!
 }
 
 type Query {
