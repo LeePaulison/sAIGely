@@ -75,9 +75,11 @@ NEXT_PUBLIC_GRAPHQL_API=http://localhost:4000/graphql
 OPENAI_API_KEY=your-key
 GITHUB_CLIENT_ID=your-id
 GITHUB_CLIENT_SECRET=your-secret
-POSTGRES_URL=postgres://...
+DATABASE_URL=postgres://...
 MONGO_URL=mongodb+srv://...
 ```
+
+The `DATABASE_URL` variable is required by `lib/db.js` for connecting to PostgreSQL.
 
 ### Run the dev environment:
 
