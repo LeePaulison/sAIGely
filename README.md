@@ -82,9 +82,7 @@ MONGO_URL=mongodb+srv://...
 ### Run the dev environment:
 
 ```bash
-bash
-CopyEdit
-npm run dev    # for Next.js client
+npm run dev    # Next.js client
 npm run server # GraphQL backend
 ```
 
