@@ -106,7 +106,6 @@ No GUI interaction is required during back-end validation.
 
 - Add multi-user support with tiered roles
 - Enhance AI personas with memory context
-- Improve keyboard input handling for multilingual support
 - Deploy MVP on Vercel and MongoDB Atlas with CI/CD hooks
 
 ---
