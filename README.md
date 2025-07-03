@@ -1,6 +1,6 @@
-# 🧠 Project-Sage
+# 🧠 sAIgely
 
-**Project-Sage** is a lightweight, full-stack AI assistant built to showcase modern front-end and back-end development patterns with real-time communication and persistent GenAI-driven conversations.
+**sAIgely** is a lightweight, full-stack AI assistant built to showcase modern front-end and back-end development patterns with real-time communication and persistent GenAI-driven conversations.
 
 Designed as a portfolio piece, Sage demonstrates technical fluency across multiple domains — from OAuth and GraphQL to database modeling and React UI architecture — while keeping the implementation approachable and modular.
 
@@ -62,8 +62,8 @@ A layered back-end system focused on modularity, testability, and maintainabilit
 ## 🛠 Development Setup
 
 ```bash
-git clone <https://github.com/yourusername/project-sage.git>
-cd project-sage
+git clone <https://github.com/yourusername/sAIgely.git>
+cd sAIgely
 npm install
 
 ```
