@@ -13,8 +13,6 @@ export default function ChatPage() {
   const userId = session?.user?.id;
   const isAuthenticated = status === 'authenticated';
 
-  console.log('[Chat/page.js] User ID:', userId);
-
   const { messages, sendMessage, isConnected, isStreaming } = useChatSocket(userId);
 
   const [isSignInModalOpen, setSignInModalOpen] = useState(false);

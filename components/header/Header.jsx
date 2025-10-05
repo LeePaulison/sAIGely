@@ -9,8 +9,8 @@ export default function Header() {
   const { data: session } = useSession();
 
   return (
-    <header className="w-full px-4 py-3 border-b bg-white">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+    <header className="w-full px-4 py-3 bg-white">
+      <div className="max-w-6xl mx-auto flex items-center justify-between border-b border-slate-200 pb-3">
         {/* Logo / Title */}
         <a href="/" className="group transition-colors duration-200">
           <Heading
@@ -18,7 +18,7 @@ export default function Header() {
             size="4"
             className="text-slate-700 group-hover:text-slate-900 group-hover:underline underline-offset-4 decoration-1"
           >
-            Project-Sage
+            sAIgely (Project-Sage)
           </Heading>
         </a>
 

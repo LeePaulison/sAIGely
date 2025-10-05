@@ -9,7 +9,7 @@ export default function ChatWindow({ messages, onSend, isStreaming, requireAuth 
   const [input, setInput] = useState('');
 
   return (
-    <div className="flex flex-col h-full w-full">
+    <div className="flex flex-col h-full w-full max-w-6xl">
       {/* Message History */}
       <ScrollArea.Root className="flex-1 overflow-hidden">
         <ScrollArea.Viewport className="h-full p-4 space-y-2">

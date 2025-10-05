@@ -2,11 +2,11 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t mt-6 py-3 px-4 text-sm text-slate-500">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <footer className="w-full mt-6 py-3 px-4 text-sm text-slate-500">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between border-t border-slate-200 pt-3">
         {/* Left: Branding */}
         <div className="text-center sm:text-left">
-          <p className="font-medium text-slate-700">© {new Date().getFullYear()} Project-Sage</p>
+          <p className="font-medium text-slate-700">© {new Date().getFullYear()} sAIgely (Project-Sage)</p>
           <p className="text-xs text-slate-400">A developer-focused GenAI MVP by Lee Paulison Jr</p>
         </div>
 
@@ -37,18 +37,6 @@ export default function Footer() {
             className="hover:text-slate-700"
           >
             <LinkedInLogoIcon className="w-5 h-5" />
-          </a>
-          <a
-            href="/privacy"
-            className="text-xs underline hover:text-slate-700"
-          >
-            Privacy
-          </a>
-          <a
-            href="/terms"
-            className="text-xs underline hover:text-slate-700"
-          >
-            Terms
           </a>
         </div>
       </div>
