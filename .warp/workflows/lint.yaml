@@ -1,0 +1,5 @@
+name: "Lint Code"
+command: "npm run lint"
+tags: ["quality", "linting"]
+description: "Run ESLint to check code quality and formatting"
+arguments: []

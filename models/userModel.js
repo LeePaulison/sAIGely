@@ -24,7 +24,5 @@ export async function createUserIfNotExists({ sub, name, email }) {
     [sub, name, email]
   );
 
-  console.log('[UserModel] Created new user:', result.rows[0]);
-
   return result.rows[0];
 }

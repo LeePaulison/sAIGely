@@ -1,0 +1,5 @@
+name: "Install Dependencies"
+command: "npm install"
+tags: ["setup", "dependencies"]
+description: "Install or update project dependencies"
+arguments: []

@@ -1,0 +1,5 @@
+name: "Run Tests"
+command: "npm test"
+tags: ["testing", "quality"]
+description: "Run the project test suite"
+arguments: []

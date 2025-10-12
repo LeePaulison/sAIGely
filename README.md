@@ -90,6 +90,56 @@ npm run server # GraphQL backend
 
 ---
 
+## ⚡ Warp Terminal Integration
+
+This project includes optimized Warp terminal configurations for enhanced development workflow on Windows with PowerShell.
+
+### 🚀 Quick Start with Warp
+
+When you open this project directory in Warp, the environment will automatically load with:
+- **Custom prompt** showing the sAIgely project context
+- **Useful aliases** for common commands (`dev`, `ws`, `build`, `test`, `lint`)
+- **Enhanced functions** for managing development servers
+- **Keyboard shortcuts** for rapid development
+
+### 📋 Available Warp Workflows
+
+Access these workflows via Warp's command palette (`Ctrl+Shift+P`):
+
+- **Start Dev Server** - Launch Next.js with Turbopack
+- **Start WebSocket Server** - Launch GraphQL and WebSocket backend
+- **Full Stack Development** - Start both servers simultaneously
+- **Build Project** - Production build
+- **Run Tests** - Execute test suite
+- **Lint Code** - Code quality checks
+- **Install Dependencies** - Update npm packages
+
+### ⌨️ Keyboard Shortcuts
+
+- `Ctrl+Shift+D` - Start development server
+- `Ctrl+Shift+W` - Start WebSocket server
+- `Ctrl+Shift+B` - Build project
+- `Ctrl+Shift+T` - Run tests
+- `Ctrl+Shift+L` - Lint code
+
+### 🛠 Enhanced PowerShell Functions
+
+```powershell
+Start-FullDev       # Start both frontend and backend servers
+Stop-DevServers     # Stop all running development servers
+Get-ProjectStatus   # Show current project status and running processes
+```
+
+### 🎨 Project Theme
+
+The Warp configuration includes a custom "sAIgely" theme with AI-inspired colors:
+- **Primary**: Cyan (#00d4ff) for the AI aesthetic
+- **Secondary**: Green (#10b981) for success states
+- **Warning**: Yellow (#fbbf24) for attention items
+- **Error**: Red (#ef4444) for issues
+
+---
+
 ## 🧪 Testing
 
 Postman collections are provided to validate:

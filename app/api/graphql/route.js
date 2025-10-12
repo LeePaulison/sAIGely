@@ -27,12 +27,13 @@ const server = new ApolloServer({
 const authObject = {
   context: async (req) => {
     const authHeader = req.headers.get('authorization') || '';
-    const sub = getSubFromAuthHeader(authHeader);
+    let sub;
 
-    console.log('[GraphQL] Auth context:', { sub });
-
-    if (!sub) {
-      return { user: null };
+    try {
+      sub = getSubFromAuthHeader(authHeader);
+    } catch (error) {
+      console.error('[GraphQL] Auth error:', error);
+      sub = null;
     }
 
     return {

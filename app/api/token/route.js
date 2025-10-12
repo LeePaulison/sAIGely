@@ -17,11 +17,8 @@ export async function GET(req) {
   });
 
   const parts = signed.split('.');
-  console.log('[API] token split count:', parts.length);
-  console.log('[API] token:', signed);
 
   if (parts.length !== 3) {
-    console.warn('[API] Still malformed');
     return new Response('Invalid token', { status: 400 });
   }
 
