@@ -1,9 +1,8 @@
 'use client';
 // This is a client component
-import { useState } from 'react';
-import { useSession, signIn, signOut } from 'next-auth/react';
-import SignInModal from '../signInModal/signInModal';
-import { Button, Heading } from '@radix-ui/themes';
+import { useSession, signOut } from 'next-auth/react';
+import Link from 'next/link';
+import { Heading } from '@radix-ui/themes';
 
 export default function Header() {
   const { data: session } = useSession();
@@ -25,13 +24,12 @@ export default function Header() {
         {/* Nav / Actions */}
         <div className="flex items-center gap-4">
           {/* Placeholder for navigation if needed */}
-          {/* <a href="/docs" className="text-sm text-gray-600 hover:text-gray-800">Docs</a> */}
 
           {/* Auth button */}
           {session?.user ? (
             <button onClick={() => signOut()} className="text-sm text-blue-600">Sign out</button>
           ) : (
-            <button onClick={() => signIn('github')} className="text-sm text-blue-600">Sign in</button>
+            <Link href="/signin" className="text-sm text-blue-600">Sign in</Link>
           )}
         </div>
       </div>
