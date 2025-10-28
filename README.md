@@ -97,6 +97,7 @@ This project includes optimized Warp terminal configurations for enhanced develo
 ### 🚀 Quick Start with Warp
 
 When you open this project directory in Warp, the environment will automatically load with:
+
 - **Custom prompt** showing the sAIgely project context
 - **Useful aliases** for common commands (`dev`, `ws`, `build`, `test`, `lint`)
 - **Enhanced functions** for managing development servers
@@ -133,6 +134,7 @@ Get-ProjectStatus   # Show current project status and running processes
 ### 🎨 Project Theme
 
 The Warp configuration includes a custom "sAIgely" theme with AI-inspired colors:
+
 - **Primary**: Cyan (#00d4ff) for the AI aesthetic
 - **Secondary**: Green (#10b981) for success states
 - **Warning**: Yellow (#fbbf24) for attention items
@@ -168,4 +170,4 @@ _(Coming soon with video walkthrough)_
 
 ## 🙋‍♂️ About the Author
 
-Made by **Lee** — a front-end dev transitioning into full-stack work. This project was created as both a passion project and a demonstration of growing mastery across modern web technologies.
+Made by **Lee Paulison Jr.** — a front-end dev transitioning into full-stack work. This project was created as both a passion project and a demonstration of growing mastery across modern web technologies.
