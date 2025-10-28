@@ -1,0 +1,17 @@
+Type AISettings {
+  id: ID!
+  provider: String!
+  model: String!
+  temperatureDefault: Float!
+  maxTokensDefault: Int!
+  responseStyleDefault: String!
+  tier: String!
+  isActive: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Query {
+  aiSettingsByTier(tier: String!): [AISettings!]!
+}
+

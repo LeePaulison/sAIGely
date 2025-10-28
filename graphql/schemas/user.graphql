@@ -1,17 +1,34 @@
+scalar DateTime
+
 type User {
   id: ID!
-  sub: String!
+  nextauthUserId: Int!
   name: String
   email: String
-  created_at: String!
-  updated_at: String!
+  emailVerified: DateTime
+  image: String
+  oauthProvider: String
+  tier: String
+  isActive: Boolean
+  lastLoginAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
 }
 
 type Query {
   me: User
-  hello: String!
+}
+
+input CreateUserInput {
+  nextauthUserId: Int!
+  name: String
+  email: String
+  image: String
+  oauthProvider: String
+  tier: String
+  isActive: Boolean
 }
 
 type Mutation {
-  createUserIfNotExists(sub: String!, name: String, email: String): User!
+  createUser(input: CreateUserInput!): User!
 }

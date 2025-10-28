@@ -1,12 +1,18 @@
 type Preferences {
   id: ID!
   userId: ID!
-  model: String!
-  temperature: Float!
-  systemPrompt: String
-  maxTokens: Int
-  compactMode: Boolean!
-  updatedAt: String!
+  theme: String!
+  aiSettings: String!
+  providerOverride: String!
+  modelOverride: String!
+  tone: String!
+  temperatureOverride: Float!
+  maxTokensOverride: Int!
+  programmingLanguage: String!
+  storeConversations: Boolean!
+  autoSummarize: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
 }
 
 type Query {
@@ -14,11 +20,16 @@ type Query {
 }
 
 input UpdatePreferencesInput {
-  model: String
-  temperature: Float
-  systemPrompt: String
-  maxTokens: Int
-  compactMode: Boolean
+  theme: String
+  aiSettings: String
+  providerOverride: String
+  modelOverride: String
+  tone: String
+  temperature_override: Float
+  maxTokensOverride: Int
+  programmingLanguage: String
+  storeConversations: Boolean
+  autoSummarize: Boolean
 }
 
 type Mutation {
