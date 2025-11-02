@@ -8,14 +8,14 @@ export default function SignInButton() {
   if (session?.user) {
     return (
       <button onClick={() => signOut()} className='px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700'>
-        Sign Out with GitHub
+        Sign Out
       </button>
     );
   }
 
   return (
-    <button onClick={() => signIn('github')} className='px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700'>
-      Sign In with GitHub
+    <button onClick={() => signIn()} className='px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700'>
+      Sign In
     </button>
   );
 }
