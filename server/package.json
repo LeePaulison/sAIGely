@@ -1,0 +1,22 @@
+{
+  "name": "saigely-server",
+  "version": "0.0.1-alpha.1",
+  "description": "A websocket server for the Saigely project",
+  "license": "ISC",
+  "author": "Lee Paulison Jr",
+  "type": "module",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "nodemon": "^3.1.10",
+    "ws": "^8.18.3"
+  }
+}
