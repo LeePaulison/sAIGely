@@ -1,7 +1,6 @@
 'use client';
 // This is a client component
 import { Heading } from '@radix-ui/themes';
-import { signIn } from '@/lib/auth/authClient';
 import Link from 'next/link';
 
 export default function Header() {

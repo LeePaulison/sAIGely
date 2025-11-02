@@ -5,7 +5,7 @@ import * as ScrollArea from '@radix-ui/react-scroll-area';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 
-export default function ChatWindow({ messages, onSend, isStreaming, requireAuth }) {
+export default function ChatWindow({ messages, onSend, isStreaming }) {
   const [input, setInput] = useState('');
 
   return (
@@ -26,7 +26,6 @@ export default function ChatWindow({ messages, onSend, isStreaming, requireAuth 
         setInput={setInput}
         onSend={onSend}
         isStreaming={isStreaming}
-        requireAuth={requireAuth}
       />
     </div>
   );

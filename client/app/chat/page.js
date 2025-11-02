@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useChatSocket } from '@/client/lib/wsClient';
+import { useChatSocket } from '@/lib/wsClient';
 import ChatWindow from './ChatWindow';
 
 export default function ChatPage() {

@@ -2,14 +2,12 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@radix-ui/themes';
 
-export default function MessageInput({ onSend, isStreaming, requireAuth }) {
+export default function MessageInput({ onSend, isStreaming }) {
   const [input, setInput] = useState('');
 
   const handleSend = () => {
     const trimmed = input.trim();
     if (!trimmed) return;
-
-    if (!requireAuth(trimmed)) return;
 
     onSend(trimmed);
     setInput('');
