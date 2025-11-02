@@ -1,6 +1,6 @@
-import { auth } from '@/lib/auth/betterAuth';
+import { auth } from '@/lib/auth/auth';
 
-export async function GET(request) {
-  const session = await auth.api.getSession(request);
+export async function GET() {
+  const session = await auth();
   return Response.json({ user: session?.user || null });
 }

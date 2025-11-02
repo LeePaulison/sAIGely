@@ -1,7 +1,8 @@
-'use client';
 // This is a client component
 import { Heading } from '@radix-ui/themes';
-import Link from 'next/link';
+// Components
+import SignInButton from '@/components/signInButton';
+
 
 export default function Header() {
   return (
@@ -18,15 +19,7 @@ export default function Header() {
           </Heading>
         </a>
         {/* Sign In Button */}
-        <Link
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            console.log('Sign In button clicked');
-          }}
-        >
-          Sign In with GitHub
-        </Link>
+        <SignInButton />
       </div>
     </header>
   );
