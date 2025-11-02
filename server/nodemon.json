@@ -1,0 +1,10 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "exec": "node --experimental-specifier-resolution=node server.js",
+  "watch": [
+    "."
+  ],
+  "ext": "js,json"
+}

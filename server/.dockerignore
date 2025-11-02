@@ -1,4 +1,5 @@
 node_modules
-*.log
-.env*
+npm-debug.log
 .git
+.env.local
+.env.development
