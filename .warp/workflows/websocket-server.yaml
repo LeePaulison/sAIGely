@@ -1,5 +1,0 @@
-name: "Start WebSocket Server"
-command: "npm run ws"
-tags: ["development", "backend"]
-description: "Start the GraphQL and WebSocket server for real-time chat"
-arguments: []

@@ -1,5 +1,0 @@
-name: "Build Project"
-command: "npm run build"
-tags: ["build", "production"]
-description: "Build the Next.js project for production"
-arguments: []

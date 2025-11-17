@@ -1,5 +1,0 @@
-name: "Full Stack Development"
-command: "Start-Job -Name 'WebSocketServer' -ScriptBlock { npm run ws }; npm run dev"
-tags: ["development", "fullstack"]
-description: "Start both the Next.js dev server and WebSocket server simultaneously"
-arguments: []

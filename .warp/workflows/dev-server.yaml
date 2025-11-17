@@ -1,5 +1,0 @@
-name: "Start Dev Server"
-command: "npm run dev"
-tags: ["development", "frontend"]
-description: "Start the Next.js development server with Turbopack"
-arguments: []
